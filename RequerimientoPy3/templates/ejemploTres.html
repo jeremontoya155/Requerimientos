@@ -1,0 +1,37 @@
+{%extends './base.html' %} {% block title%} Principal {% endblock %} {% block
+body %}
+
+<h1 class="centrar">Ejemplo Tres</h1>
+
+{% with messages=get_flashed_messages() %} {% if messages %} {% for message in
+messages %}
+<p>{{message}}</p>
+{% endfor %} {% endif %}{% endwith %}
+<form action="/input/my_numeric_field" method="POST" class="centrar py-5">
+  <input type="text" name="id" id="" placeholder="id" />
+  <input type="text" value="foo" name="field_l" id="" placeholder="field_l" />
+  <input
+    type="text"
+    value="elon musk"
+    name="author"
+    id=""
+    placeholder="author"
+  />
+  <input
+    type="text"
+    value="bar"
+    name="description"
+    id=""
+    placeholder="description"
+  />
+  <input
+    type="text"
+    name="my_numeric_field"
+    id=""
+    value="123"
+    placeholder="my_numeric_field"
+  />
+  <button type="submit">Subir</button>
+</form>
+
+{% endblock %}

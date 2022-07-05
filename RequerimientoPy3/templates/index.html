@@ -1,0 +1,61 @@
+{%extends './base.html' %} {% block title%} Principal {% endblock %} {% block
+body %}
+
+<h1 class="centrar">Principal</h1>
+
+{% with messages=get_flashed_messages() %} {% if messages %} {% for message in
+messages %}
+<p>{{message}}</p>
+{% endfor %} {% endif %}{% endwith %}
+<form action="/add_person" method="POST" class="centrar py-5">
+  <input type="text" name="id" id="" placeholder="id" />
+  <input type="text" name="field_l" id="" placeholder="field_l" />
+  <input type="text" name="author" id="" placeholder="author" />
+  <input type="text" name="description" id="" placeholder="description" />
+  <input
+    type="text"
+    name="my_numeric_field"
+    id=""
+    placeholder="my_numeric_field"
+  />
+  <button type="submit">Subir</button>
+</form>
+
+<table class="table py-5">
+  <thead>
+    <tr>
+      <td><strong>Id</strong></td>
+      <td><strong>Field_l</strong></td>
+      <td><strong>Author</strong></td>
+      <td><strong>Description</strong></td>
+      <td><strong>My_numeric_field</strong></td>
+      <td><strong>Boorrar</strong></td>
+    </tr>
+  </thead>
+  <tbody>
+    {% for d in datos %}
+
+    <tr>
+      <td>{{d.0}}</td>
+      <td>{{d.1}}</td>
+      <td>{{d.2}}</td>
+      <td>{{d.3}}</td>
+      <td>{{d.4}}</td>
+      <td>
+        <a href="/delete/{{d.0}}">Eliminar</a>
+      </td>
+    </tr>
+
+    {% endfor %}
+  </tbody>
+</table>
+
+<div class="centrar py-3 actv">
+  <strong>
+    <a href="https://github.com/jeremontoya155/Requerimientos"
+      >Actividades con Java</a
+    >
+  </strong>
+</div>
+
+{% endblock %}

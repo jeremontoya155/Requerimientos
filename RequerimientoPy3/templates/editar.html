@@ -1,0 +1,31 @@
+<!--Hacemos la etiquetas que van a indicar como el importe ,esto va a suceder para cada una de las pestañas-->
+
+{%extends './base.html' %} {% block title%} Contacto {% endblock %} {% block
+body %}
+
+<form action="/update/{{contacto.0}}" method="POST">
+  <input
+    type="text"
+    name="fullname"
+    id=""
+    placeholder="Nombre"
+    value="{{contacto.1}}"
+  />
+  <input
+    type="text"
+    name="phone"
+    id=""
+    placeholder="Telefono"
+    value="{{contacto.2}}"
+  />
+  <input
+    type="text"
+    name="email"
+    id=""
+    placeholder="Email"
+    value="{{contacto.3}}"
+  />
+  <button type="submit">Subir</button>
+</form>
+
+{% endblock %}

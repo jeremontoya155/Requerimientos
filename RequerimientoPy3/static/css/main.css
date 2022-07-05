@@ -1,0 +1,27 @@
+body {
+  background-color: rgba(13, 18, 116, 0.244);
+}
+
+.centrar {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.actv {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 2em;
+  color: rgb(31, 31, 197);
+}
+
+.actv:hover {
+  font-size: 3em;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
